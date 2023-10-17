@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba #1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 85%
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+
+
+        #top {
+            background-color: #8a2be2;
+            padding: 15px;
+            color: aliceblue;
+            display: flex;
+            align-items: center;
+        }
+
+        #logo {
+            width: 120px;
+            height: auto;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        #border {
+            border: 1px outset black;
+            padding: 2px;
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        #intro {
+            font-family: helvetica, Georgia, 'Times New Roman', Times, serif;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .question-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+
+        }
+        @keyframes slideIn {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+
+
+        /* Estilos para el botón */
+        button {
+            background-color: #8a2be2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: darkorchid;
+        }
+
+
+                /* Estilos para el select */
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            appearance: none; /* Oculta la flecha de despliegue del select en algunos navegadores */
+            background-color: white;
+            cursor: pointer;
+        }
+
+        /* Estilos para los option */
+        select option {
+            font-size: 16px;
+            background-color: white;
+        }
+
+        /* Estilos para cuando el select está enfocado */
+        select:focus {
+            outline: none;
+            border-color: blueviolet;
+            box-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
+        }
+        #respuesta {
+                    display: none;
+                    text-align: center;
+                    margin-top: 20px;
+                    
+                }#imagen{
+                    border-radius: 20px;
+                }
+                /* Estilos para tamaños de pantalla mayores o iguales a 768px (tablets y computadoras) */
+                @media (min-width: 768px) {
+                    #imagen {
+                        width: 40%;
+                    }
+                }
+
+                /* Estilos para tamaños de pantalla menores a 768px (celulares) */
+                @media (max-width: 767px) {
+                    #imagen {
+                        width: 80%;
+                    }}
+                #mensaje{
+                    padding: 5%;
+                }
+    </style>
+</head>
+<body>
+    <div id="border">
+        <div id="top">
+            <img id="logo" src="logo utp.jpg" alt="Logo UTP">
+            <h1>Test de Excelencia</h1>
+        </div>
+        <div id="intro">
+            <p>
+                <h3>Bienvenidos al Test de Excelencia</h3><br>
+                Donde los sueños se encuentran con determinación y la excelencia se convierte en una realidad palpable.<br><br>
+                En este desafío, no solo mediremos tus conocimientos y habilidades, sino también tu pasión, tu perseverancia y tu capacidad para superar los límites que te has impuesto a ti mismo. La excelencia no es un logro ocasional, sino un hábito constante. <br><br>
+                Cada pregunta que enfrentes aquí no es solo una oportunidad para demostrar lo que sabes, sino también para descubrir cuánto más eres capaz de aprender. Recuerda, el camino hacia la excelencia comienza con un solo paso, y cada respuesta correcta es un paso más hacia tu potencial completo. <br><br>
+                ¡Buena suerte, y que la excelencia sea tu guía en este emocionante viaje!
+            </p><br><br>
+
+            <div class="question-container">
+                <div class="question-text">¿Estudias?</div>
+                <select id="calificacion">
+                    <option value="1">nunca</option>
+                    <option value="2">a veces</option>
+                    <option value="3">antes de un ejercicio</option>
+                    <option value="4">nomalmente</option>
+                    <option value="5">siempre</option>
+                </select>
+            </div>
+
+            <div class="question-container">
+                <div class="question-text">¿Que haces cuando piden una idea?</div>
+                <select id="calificacion2">
+                    <option value="1">nada</option>
+                    <option value="2"> doy mi peor idea</option>
+                    <option value="3">espero que alguien mas diga algo</option>
+                    <option value="4">hago una bomba</option>
+                    <option value="5">brillo telepaticamente</option>
+                </select>
+            </div>
+
+
+            <div class="question-container">
+                <div class="question-text">¿Cómo calificarías esta pregunta?</div>
+                <select id="calificacion3">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <button onclick="mostrarRespuesta()">Mostrar Respuesta</button>
+        </div>
+        <div id="respuesta"><br>
+            <h2>Tu personalidad es</h2>
+            <img id="imagen" src="" alt="Respuesta Imagen"><br><br>
+            <div id="mensaje"></div>
+            
+        </div>
+    
+        <script>
+            function mostrarRespuesta() {
+                var respuesta = 1 * document.getElementById("calificacion").value;
+                var respuesta2 = 1 * document.getElementById("calificacion2").value;
+                var respuesta3 = 1 * document.getElementById("calificacion3").value;
+                var total = respuesta + respuesta2 + respuesta3;
+    
+                var mensaje = "";
+                var imagenSrc = "";
+    
+                if (total >= 11 && total <= 15) {
+                    mensaje = "Enhorabuena por ser una persona excepcional. Tu dedicación, pasión y determinación han llevado tus habilidades y logros a un nivel extraordinario. Tu excelencia no solo es inspiradora, sino también un testimonio de tu arduo trabajo y perseverancia. Sigue brillando con esa luz única que te distingue. El mundo está lleno de posibilidades para alguien tan talentoso como tú. ¡Sigue adelante y sigue siendo excelente en todo lo que haces! 🌟";
+                    imagenSrc = "Excelente.jpg"; // Coloca la ruta de la imagen para esta respuesta
+                } if (total >= 5 && total <= 10) {
+                    mensaje = "Tienes potencial, sigue trabajando en tu proactividad y creatividad.";
+                    imagenSrc = "Malo.jpg"; // Coloca la ruta de la imagen para esta respuesta
+                } 
+                if(total >= 1 && total <= 4) {
+                    mensaje = "Necesitas mejorar tu proactividad y creatividad.";
+                    imagenSrc = "Normal.jpg"; // Coloca la ruta de la imagen para esta respuesta
+                }
+    
+                // Muestra el mensaje y la imagen
+                document.getElementById("mensaje").textContent = mensaje + total;
+                document.getElementById("imagen").src = imagenSrc;
+                document.getElementById("respuesta").style.display = "block";
+            }
+        </script>
+    </div>
+
+
+</body>
+</html>
